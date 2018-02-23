@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>
+        
+	</style>
+</head>
+<body>
+  <div ng-app="" ng-init="quantity=6;price=5"> <!-- initialize the data -->
+   <!-- Using ng-init is not very common. You will learn how to initialize data in the chapter about controllers. -->
+   Quantity: <input type="number" ng-model="quantity"> <br />
+   Costs:    <input type="number" ng-model="price"> <br />
+
+   Total in dollar: {{ quantity * price }}
+
+</div>
+</body>
+</html>

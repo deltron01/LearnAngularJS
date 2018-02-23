@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<!-- <script type = "text/javascript" src="jquery-1.11.2.min.js"></script> -->
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>
+	<style type = "text/CSS"> 
+        
+	</style>
+</head>
+<body ng-init="noms=['Maatalla', 'Ali', 'Geek', 'Programmer', 'Nta3 walou']">
+    <h1> AngularJS beginning of the start !</h1> <br />
+	NOM :   <br />
+	<input type="text" ng-model="nom"></input> {{nom}} <!-- ng-model & ng-app sont appel?s des directives -->
+	                                                   <!-- {{nom}} c'est ce qu'on appelle le data binding -->
+	<ul>
+	  <li ng-repeat="personne in noms | filter:nom">{{personne | uppercase}}</li>
+	
+	</ul>
+</body>
+</html>

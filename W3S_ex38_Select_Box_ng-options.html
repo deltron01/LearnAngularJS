@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>       
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<select ng-model="selectedName" ng-options="x for x in names">
+</select>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.names = ["Angular", "Maatalla", "Linus"];
+});
+</script>
+
+<p>This example shows how to fill a dropdown list using the ng-options directive.</p>
+</body>
+    <!--  If you want to create a dropdown list, based on an object or an array in AngularJS, you should use the ng-options directive
+         -->
+</html>

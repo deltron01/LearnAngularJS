@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>       
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>Today's welcome message is:</p>
+
+<h1>{{myWelcome}}</h1>
+
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http({
+    method : "GET",
+    url : "welcome.htm"
+  }).then(function mySuccess(response) {
+      $scope.myWelcome = response.data;
+    }, function myError(response) {
+      $scope.myWelcome = response.status;
+  });
+});
+</script>
+</body>
+    <!-- The example above executes the $http service with an object as an argument. The object is specifying the HTTP method, the url, what to do on success, and what to do on failure.
+         The response from the server is an object with these properties:
+     - .config the object used to generate the request.
+     - .data a string, or an object, carrying the response from the server.
+     - .headers a function to use to get header information.
+     - .status a number defining the HTTP status.
+     - .statusText a string defining the HTTP status.
+    -->
+</html>

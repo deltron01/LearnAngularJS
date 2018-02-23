@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="telApp">
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<!-- <script type = "text/javascript" src="jquery-1.11.2.min.js"></script> -->
+	<script type = "text/javascript" src="js/angular.min.js"></script>
+	<script type = "text/javascript" src="js/angular-route.min.js"></script>
+	<style type = "text/CSS">  
+	</style>
+</head>
+<body > <!-- <body ng-init="telephones=[{nom: 'Samsung S2', prix: 300000},{nom: 'iPhone 5', prix: 400000},{nom: 'Nokia Luna', prix: 25}]"> -->
+    <h1> AngularJS beginning of the start !</h1> <br />
+	<div ng-controller="telephoneController">
+	  Marque :
+	  <input type="text" ng-model="filter.tel"></input> {{filter.tel | uppercase}} <!-- ng-model & ng-app sont appelés des directives -->
+	                                                   <!-- {{nom}} c'est ce qu'on appelle le data binding -->
+	  <script>
+	    var telApp = angular.module('telApp', []); <!--  un module peut utiliser d'autres module, ces modules peuvent être introduits dans le [] --></!-->
+		var controllers = {};
+		controllers.telephoneController = function($scope){ <!-- $scope est l'intermediare entre ce controller et la vue...c'est une sorte d'injection de dépendance--></!-->
+		$scope.telephones = [{nom: 'Samsung S2', prix: 300000},{nom: 'iPhone 5', prix: 400000},{nom: 'Nokia Luna', prix: 25}];
+		};
+	    telApp.controller(controllers);
+	  </script>
+	  <ul>
+	    <li ng-repeat="tel in telephones | filter: filter.tel">{{tel.nom}} - {{tel.prix | currency}}</li>	
+	  </ul>
+	  </div>
+	
+</body>
+</html>

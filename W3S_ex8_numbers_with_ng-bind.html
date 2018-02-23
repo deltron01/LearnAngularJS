@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>
+        
+	</style>
+</head>
+<body>
+  <div ng-app="" ng-init="quantity=8;cost=5"> <!-- ng-init initializes the data  : here variables are numbers, see that we didnt write '8' with quotes-->
+   <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>
+        
+	</style>
+</head>
+<body ng-app="myApp">
+    <!-- AngularJS has a set of built-in directives which you can 
+use to add functionality to your application. But, you can use the module to add your own directives to your applications
+New directives are created by using the .directive function.
+To invoke the new directive, make an HTML element with the same tag name as the new directive.
+When naming a directive, you must use a camel case name, w3TestDirective, but when invoking it, you must use - separated name, w3-test-directive.
+-->
+  <div class="w3-test-directive"></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "C", 
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script> <!-- Note: You must add the value "C" to the restrict property to be able to invoke the directive from a class name. -->
+</body>
+<!-- You can invoke a directive by using:
+
+    *Element name
+    *Attribute
+    *Class
+    *Comment               -->
+</html>

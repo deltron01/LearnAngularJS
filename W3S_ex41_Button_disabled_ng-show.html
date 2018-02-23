@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<script type = "text/javascript" src="js/angular.min.js">
+	</script>       
+</head>
+<body>
+<div ng-app="" ng-init="mySwitch=true">
+<p>
+<button ng-disabled="mySwitch">Click Me!</button>
+</p>
+<p>
+<input type="checkbox" ng-model="mySwitch"/>Button
+</p>
+<p>
+<h4>Button disabled ? </h4>  {{ mySwitch }}
+</p>
+    <div ng-app="">
+
+<p ng-show="true">I am visible.</p>
+
+<p ng-show="false">I am not visible.</p>
+<div ng-app="" ng-init="hour=13">
+<p ng-show="hour > 11">I am visible.</p>
+
+</div>
+
+</div>
+</div> 
+</body>
+    <!-- The ng-disabled directive binds the application data mySwitch to the HTML button's disabled attribute.
+         The ng-model directive binds the value of the HTML checkbox element to the value of mySwitch.
+         If the value of mySwitch evaluates to true, the button will be disabled
+         The ng-show directive shows or hides an HTML element
+         The ng-hide does the reverse job of ng-show
+         -->
+</html>

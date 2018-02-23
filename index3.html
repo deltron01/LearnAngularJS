@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="telApp">
+<head>
+    <meta charset="utf-8">
+    <title>Welcomre to AngularJS !</title>
+	<!-- <script type = "text/javascript" src="jquery-1.11.2.min.js"></script> -->
+	<script type = "text/javascript" src="js/angular.min.js"></script>
+	<script type = "text/javascript" src="js/angular-route.min.js"></script>
+	<style type = "text/CSS">  
+	</style>
+</head>
+<body > <!-- <body ng-init="telephones=[{nom: 'Samsung S2', prix: 300000},{nom: 'iPhone 5', prix: 400000},{nom: 'Nokia Luna', prix: 25}]"> -->
+	<!--><div ng-view></div></!-->
+	<div ng-controller="telephoneController">
+	<h1> AngularJS beginning of the start !</h1> <br />
+	<ng-view></ng-view>
+	  Marque :
+	  <input type="text" ng-model="filter.tel"></input> {{filter.tel | uppercase}} <!-- ng-model & ng-app sont appelés des directives -->
+	                                                   <!-- {{nom}} c'est ce qu'on appelle le data binding -->
+	  <script>
+	    var telApp = angular.module('telApp', ['ngRoute']); <!--  un module peut utiliser d'autres module, ces modules peuvent être introduits dans le [] --></!-->
+		telApp.config(function($routeProvider){
+		 $routeProvider
+		 .when('/', { templateUrl : 'partials/view1.html'})
+		 .when('/cours', { templateUrl : 'partials/cours.html'})
+		 .otherwise({redirectTo : '/'});
+		});
+	    telApp.controller('telephoneController', function($scope){
+		  $scope.telephones = [
+		  {nom: 'Samsung S2', prix: 300000},
+		  {nom: 'iPhone 5', prix: 400000},
+		  {nom: 'Nokia Luna', prix: 25}];
+		});
+	  </script>
+	  <ul>
+	    <li ng-repeat="tel in telephones | filter: filter.tel">{{tel.nom}} - {{tel.prix | currency}}</li>	
+	  </ul>
+	  </div>
+	
+</body>
+</html>

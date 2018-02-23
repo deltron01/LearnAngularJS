@@ -1,0 +1,83 @@
+
+Angular JS Services : 
+
+*In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
+*AngularJS has about 30 built-in services. One of them is the $location service
+*The $location service has methods which return information about the location of the current web page
+*In AngularJS you can make your own service, or use one of the many built-in services.
+*  Why use Services???
+    --> For many services, like the $location service, it seems like you could use objects that are already in the DOM, 
+	    like the window.location object, and you could, but it would have some limitations, at least for your AngularJS application.
+		AngularJS constantly supervises your application, and for it to handle changes and events properly,
+		AngularJS prefers that you use the $location service instead of the window.location object.
+*Once you have created a service, and connected it to your application,
+ you can use the service in any controller, directive, filter, or even inside other services.
+ 
+ Angular HTTP : 
+ 
+ *$http is an AngularJS service for reading data from remote servers.
+ *The AngularJS $http service makes a request to the server, and returns a response.
+ *shortcut methods of the $http service :
+  -.delete() -.get() -.head() -.jsonp() -.patch() -.post()-.put()
+ *
+ *
+
+ Angular JS Forms :
+ 
+ *Forms in AngularJS provides data-binding and validation of input controls.
+ *Input Controls : Input controls are the HTML input elements:
+  -input elements
+  -select elements
+  -button elements
+  -textarea elements
+ *Input controls provides data-binding by using the ng-model directive : <input type="text" ng-model="firstname"> , The application does now have a property named firstname.
+  The ng-model directive binds the input controller to the rest of your application. The property firstname, can be referred to in a controller.
+  <script>
+   var app = angular.module('myApp', []);
+   app.controller('formCtrl', function($scope) {
+   $scope.firstname = "Ali";
+   });
+   </script>
+ *Form State & Input State : AngularJS is constantly updating the state of both the form and the input fields.
+  Input fields have the followong states : 
+  -$untouched The field has not been touched yet
+  -$touched The field has been touched
+  -$pristine The field has not been modified yet
+  -$dirty The field has been modified
+  -$invalid The field content is not valid
+  -$valid The field content is valid
+  They are all properties of the input field, and are either true or false.
+  Forms have the following states:
+  -$pristine No fields have been modified yet
+  -$dirty One or more have been modified
+  -$invalid The form content is not valid
+  -$valid The form content is valid
+  -$submitted The form is submitted
+  They are all properties of the form, and are either true or false.
+ *You can use these states to show meaningful messages to the user. Example, 
+  if a field is required, and the user leaves it blank, you should give the user a warning
+ *AngularJS adds CSS classes to forms and input fields depending on their states.
+
+ Angular JS Routing :
+ 
+ -The ngRoute module helps your application to become a Single Page Application.
+ -If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application),
+  with no page reloading, you can use the ngRoute module.
+ -The ngRoute module routes your application to different pages without reloading the entire application.
+ -
+ -
+ -
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
